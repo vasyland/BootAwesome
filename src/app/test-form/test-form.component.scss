@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "src/scss/_variables";
+
+h2 {
+  color: $other-color;
+}
+
+.main-form {
+  width: 500px;
+  margin: auto;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
+}

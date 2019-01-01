@@ -1,0 +1,68 @@
+<form action="" class="main-form" #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+    <div class="grid">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" required minlength="3" pattern="lazy" name="firstName" class="form-control" ngModel
+              #firstName="ngModel" (change)="log(firstName)">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+              <div *ngIf="firstName.errors.required">First name is requried.</div>
+              <div *ngIf="firstName.errors.minlength">Minimal length should be minimum {{
+                firstName.errors.minlength.requiredLength}} characters.</div>
+              <div *ngIf="firstName.errors.pattern">Must work hard. Change your pattern.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" required id="lastName" class="form-control" ngModel name="lastName">
+            <small class="form-text text-muted">This should be your last name.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!contact.valid">Not all data typed to make it fly..</div>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea name="comment" id="comment" cols="30" rows="3" class="form-control" ngModel #comment="ngModel"></textarea>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-check">
+        <input type="checkbox" id="accept" class="form-check-input" ngModel #accept="ngModel" name="accept">
+        <label for="accept" class="form-check-label">Accept Terms:</label>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="form-group">
+        <label for="reason">Reason:</label>
+        <select multiple name="reason" id="reason" class="form-control" required ngModel #reason="ngModel">
+          <option value=""></option>
+          <option *ngFor="let m of reasonItems" [ngValue]="m">{{m.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngFor="let rm of reasonItems" class="radio">
+    <label for="timing">
+      <input ngModel type="radio" name="timing" [value]="rm.id">&nbsp;{{rm.name}}
+    </label>
+  </div>
+  
+
+
+  <p>{{f.value | json}}</p>
+  <button class="btn btn-primary" [disabled]="!f.valid">
+    <div style="text-align:left">
+      <fa-icon [icon]="['fas', 'coffee']" size="3x"></fa-icon>
+    </div>Coffee?
+  </button>
+</form>
