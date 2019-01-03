@@ -15,7 +15,9 @@ Guide: How to use Bootstrap 4 with FontAwesome in Angular
 =========================================================
 
 1. ng new AbaApp --style=scss
+
    Would you like to Angular routing? Y
+
 2. cd AbaApp
     
 Install them from command window
@@ -60,13 +62,13 @@ Install them from command window
 
 	@import '_variables';
 
-
 	body {
 
 		background-color: $background-color;
 
 	}
 	
+
 14. Add imports into app.moduls.ts file
 
 	import { FormsModule } from "@angular/forms";
@@ -78,6 +80,7 @@ Install them from command window
     imports: [BrowserModule, FormsModule, FontAwesomeModule],
 
 	
+
 15. Add imports into app.component.ts the following
 
 	import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -112,11 +115,12 @@ Install them from command window
 
 	}
 	
+    
 
     16. To make your application working in IE 11 find a file polyfills.ts using Ctrl+P
 
         and uncomment section /** IE9, IE10 and IE11 requires all of the following polyfills. **/
-        
+
 
     
 
