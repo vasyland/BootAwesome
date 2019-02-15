@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
-## Running on loacl laptop
+## Running on a laptop
 ```bash
 git clone https://github.com/vasyland/BootAwesome.git
 cd into project
