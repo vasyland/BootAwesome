@@ -97,7 +97,11 @@ and uncomment section /** IE9, IE10 and IE11 requires all of the following polyf
 
 ## Git goodies
 https://www.onwebsecurity.com/configuration/git-on-windows-location-of-global-configuration-file.html
+```
 git config --list --local
+git config --list --show-origin | awk '{print $1}' | uniq 
+git config --list --system --show-origin
+```
 
     
 
