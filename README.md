@@ -95,6 +95,9 @@ npm install @fortawesome/free-regular-svg-icons -–save
 To make your application working in IE 11 find a file polyfills.ts using Ctrl+P
 and uncomment section /** IE9, IE10 and IE11 requires all of the following polyfills. **/
 
+## Git goodies
+https://www.onwebsecurity.com/configuration/git-on-windows-location-of-global-configuration-file.html
+git config --list --local
 
     
 
